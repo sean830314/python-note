@@ -1,0 +1,11 @@
+mysql:
+    host: localhost
+    user: admin
+    passwd: adminpasswd
+    db: food
+other:
+    type:
+        - Sweet
+        - Spicy
+        - Sour
+    food: yes
