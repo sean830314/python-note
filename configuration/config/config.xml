@@ -1,0 +1,16 @@
+<config>
+    <mysql>
+        <host>localhost</host>
+        <user>admin</user>
+        <passwd>adminpasswd</passwd>
+        <db>food</db>
+    </mysql>
+    <other>
+        <type>
+            <li>Sweet</li>
+            <li>Spicy</li>
+            <li>Sour</li>
+        </type>
+        <food value="yes" />
+    </other>
+</config>
