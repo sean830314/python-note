@@ -1,3 +1,4 @@
+# design pattern singleton
 class Company:
     __single = None
 
