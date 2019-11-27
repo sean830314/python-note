@@ -1,5 +1,5 @@
 title = "toml file"
-write = "writter"
+write = "test_key"
 
 [owner]
 type = "toml"

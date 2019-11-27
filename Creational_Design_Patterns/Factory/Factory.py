@@ -93,7 +93,23 @@ class WritterFactory:
         elif file.find(".toml") != -1:
             return TomlWritter(file)
 
-
+class ReaderAndWritterFactory:
+    def create_reader_and_writter(self, read_file, write_file):
+        self.reader = ReaderFactory.new_reader(read_file)
+        self.writter = WritterFactory.new_writter(write_file)
+    def setting(self, key):
+        data = self.reader.read()
+        data['write'] = key
+        self.writter.write(data)
+def main():
+    read_file_name = os.path.dirname(os.path.abspath(__file__))+"/config/config.yaml"
+    write_file_name = os.path.dirname(os.path.abspath(__file__))+"/config/write.yaml"
+    f = ReaderAndWritterFactory()
+    f.create_reader_and_writter(read_file_name, write_file_name)
+    f.setting("test_key")
+if __name__ == '__main__':
+    main()
+"""
 file_name = os.path.dirname(os.path.abspath(__file__))+"/config/config.yaml"
 reader = ReaderFactory.new_reader(file_name)
 data = reader.read()
@@ -101,3 +117,4 @@ write_file_name = os.path.dirname(os.path.abspath(__file__))+"/config/write.yaml
 data['write'] = "writter"
 writter = WritterFactory.new_writter(write_file_name)
 writter.write(data)
+"""
