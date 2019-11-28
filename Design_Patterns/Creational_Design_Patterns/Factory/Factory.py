@@ -3,12 +3,12 @@ import yaml
 import toml
 import os
 
-
+#Product
 class Writter:
     def write():
         pass
 
-
+#ConcreteProduct
 class JsonWritter(Writter):
     def __init__(self, file):
         self._file = file
@@ -18,7 +18,7 @@ class JsonWritter(Writter):
             d = json.dumps(data)
             fp.write(d)
 
-
+#ConcreteProduct
 class YamlWritter(Writter):
     def __init__(self, file):
         self._file = file
@@ -28,7 +28,7 @@ class YamlWritter(Writter):
             d = yaml.dump(data)
             fp.write(d)
 
-
+#ConcreteProduct
 class TomlWritter(Writter):
     def __init__(self, file):
         self._file = file
@@ -38,12 +38,12 @@ class TomlWritter(Writter):
             r = toml.dump(data, f)
             print(r)
 
-
+#Product
 class Reader:
     def read():
         pass
 
-
+#ConcreteProduct
 class JsonReader(Reader):
     def __init__(self, file):
         self._file = file
@@ -54,7 +54,7 @@ class JsonReader(Reader):
             data = json.loads(reader.read())
         return data
 
-
+#ConcreteProduct
 class YamlReader(Reader):
     def __init__(self, file):
         self._file = file
@@ -64,7 +64,7 @@ class YamlReader(Reader):
             data = yaml.load(file, Loader=yaml.FullLoader)
         return data
 
-
+#ConcreteProduct
 class TomlReader(Reader):
     def __init__(self, file):
         self._file = file
@@ -73,7 +73,7 @@ class TomlReader(Reader):
         data = toml.load(self._file)
         return data
 
-
+#ConcreteFactory
 class ReaderFactory:
     def new_reader(file):
         if file.find(".json") != -1:
@@ -83,7 +83,7 @@ class ReaderFactory:
         elif file.find(".toml") != -1:
             return TomlReader(file)
 
-
+#ConcreteFactory
 class WritterFactory:
     def new_writter(file):
         if file.find(".json") != -1:
@@ -92,7 +92,7 @@ class WritterFactory:
             return YamlWritter(file)
         elif file.find(".toml") != -1:
             return TomlWritter(file)
-
+#Factory
 class ReaderAndWritterFactory:
     def create_reader_and_writter(self, read_file, write_file):
         self.reader = ReaderFactory.new_reader(read_file)
