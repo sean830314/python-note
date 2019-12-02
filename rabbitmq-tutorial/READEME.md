@@ -13,3 +13,22 @@ Run rabbitmq
 ```
 docker run -d --hostname localhost --name myrabbit -p 15672:15672 -p 5672:5672 rabbitmq:3.6.15-management
 ```
+## RabbitMQ Command Line
+list queue
+```
+rabbitmqctl list_queues
+```
+list queue content
+```
+rabbitmqctl -u admin -p adminpass get queue=queue_name count=10
+```
+list exchange
+```
+rabbitmqctl list_exchanges
+```
+list binding
+```
+rabbitmqctl list_bindings
+```
+## Reference
+- [Getting started with RabbitMQ](https://www.rabbitmq.com/getstarted.html)
