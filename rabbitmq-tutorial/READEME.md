@@ -4,3 +4,12 @@
 3. lecture3 is rabbitmq fanout exchange application,that some application send job to temp queues and others application is receive job of temp queues
 4. lecture4 is rabbitmq direct exchange application,that some application send job to temp queues and others application is receive job of temp queues by routing_key
 5. lecture5 is rabbitmq topic exchange application,that some application send job to temp queues and others application is receive job of temp queues by topic routing_key
+## setup rabbitmq
+Pull rabbitmq image from Docker Hub
+```
+docker pull rabbitmq:3.6.15-management
+```
+Run rabbitmq
+```
+docker run -d --hostname localhost --name myrabbit -p 15672:15672 -p 5672:5672 rabbitmq:3.6.15-management
+```
