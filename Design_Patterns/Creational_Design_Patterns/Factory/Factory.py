@@ -108,6 +108,25 @@ def main():
     f.create_reader_and_writter(read_file_name, write_file_name)
     f.setting("test_key")
 if __name__ == '__main__':
+    """
+    工廠模式
+
+        今天要介紹的工廠模式，
+        其實概念非常的簡單，
+        在其中主要的角色只有兩個商品和工廠，
+
+        真的只有這麼簡單嗎？其實有一些隱藏在背後的東西...
+
+        當我們在使用工廠模式時，
+        你跟工廠說你想要的那種規格的商品，
+        而工廠負責製造你想要的那種規格的商品，
+        當中可能需要某些組裝或是特殊步驟，
+        但是作為消費者你不知道這些組裝方式和步驟，
+        你還是可以買到你想要的東西。
+    
+    定義
+        工廠方法模式( Factory Method )，定義一個用於建立物品的介面，讓子類決定實體化哪一個類別。工廠方法使一個類別的實例化延遲到其子類別。
+    """
     main()
 """
 file_name = os.path.dirname(os.path.abspath(__file__))+"/config/config.yaml"
